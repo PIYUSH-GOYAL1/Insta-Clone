@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1><strong><em>WELCOME TO PROFILE PAGE !!</em></strong></h1>
+    <h3><strong><em><%= user.username %></em></strong></h3>
+    <a href="/edit"><p><em>Edit Your Profile</em></p></a>
+    <a href="/upload"><p><em>Upload Your Post</em></p></a>
+    <a href="/feed"><p><em>Go to Feed Section</em></p></a>
+    <a href="/search"><p><em>Go to Search Section</em></p></a>
+    <br><br>
+    <h3><strong><em>Your Bio : <%= user.bio %></em></strong></h3>
+    <!-- <h3><strong><em></em></strong></h3> -->
+    <h3><strong><em>Your DP : </em></strong></h3>
+    <a href="/images/uploads/<%= user.dp %>"><img src="/images/uploads/<%= user.dp %>" alt=""></a>
+
+    <h3><strong><em>Your Posts : </em></strong></h3>
+    <% user.posts.forEach(function(post){ %>
+        <a href="/images/uploads/<%= post.postimage %>"><img src="/images/uploads/<%= post.postimage %>" alt=""></a> <p><%= post.posttext %></p>
+
+   <% }) %>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><strong><em>Edit Your Profile !!</em></strong></h1>
+    <form action="/edit" method="post" enctype="multipart/form-data">
+        <label for="dp">Select your DP : </label>
+        <input type="file" name="dp" id="dp"><br><br>
+        <label for="username">Change your User Name : 
+            <input type="text" name="username" id="username" value="<%= user.username %>">
+        </label><br><br>
+        <label for="bio"> Enter Your Bio Text : 
+            <textarea name="bio" id="bio" cols="30" rows="10"><%= user.bio %></textarea>
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+    <p><a href="/profile">Go to Profile Page</a></p>
+</body>
+</html>

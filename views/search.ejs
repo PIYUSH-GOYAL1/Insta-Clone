@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="/profile"><p><em>Go to Profile Page</em></p></a>
+    <h2><strong><em>Search Users : </em></strong></h2>
+
+    
+    <form action="/username/:username" method="get">
+        <input type="text" name="user" id="user">
+    </form>
+        
+    
+    
+    <div class="users">
+        
+    </div>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        const inp = document.querySelector("#user");
+        let clutter = "";
+        inp.addEventListener("input" , function(){
+            axios.get(`/username/${inp.value}`)
+            .then(function(data){
+                clutter = "";
+                data.data.forEach(function(elem){
+                    clutter += `<img src="/images/uploads/${elem.dp}" alt="" style = "height : 20px; width : 20px;"> <p>${elem.username}</p>`
+                })
+            document.querySelector(".users").innerHTML = clutter;
+            })
+            
+        })
+    </script>
+</body>
+</html>

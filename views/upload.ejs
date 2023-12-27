@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><strong><em>Create Your Own Post : </em></strong></h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="postimage">
+            <input type="file" name="postimage" id="postimage">
+        </label><br><br>
+        <label for="posttext">
+            <textarea name="posttext" id="posttext" cols="30" rows="10"></textarea>
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+    <p><a href="/profile">Go TO Profile Page</a></p>
+</body>
+</html>
